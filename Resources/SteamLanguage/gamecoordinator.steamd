@@ -1,0 +1,22 @@
+
+
+enum EGCMsg
+{
+	Invalid = 0;
+};
+
+class MsgGCHdrProtoBuf
+{
+	protomask EGCMsg msg = EGCMsg::Invalid;
+	int headerLength;
+
+	proto<headerLength> SteamKit2.Internal.GC.CMsgProtoBufHeader protoHeader;
+};
+
+class MsgGCHdr
+{
+	ushort headerVersion = 1;
+
+	long targetJobID = -1;
+	long sourceJobID = -1;
+};
