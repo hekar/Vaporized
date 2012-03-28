@@ -1,4 +1,5 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+namespace Vapor
 {
     partial class FriendControl
     {
@@ -32,9 +33,9 @@
             this.nameLbl = new System.Windows.Forms.Label();
             this.statusLbl = new System.Windows.Forms.Label();
             this.gameLbl = new System.Windows.Forms.Label();
-            this.btnDeny = new Vapor.VaporButton();
-            this.btnAccept = new Vapor.VaporButton();
-            this.vaporContextMenu1 = new Vapor.VaporContextMenu();
+            this.btnDeny = new Button();
+            this.btnAccept = new Button();
+            this.vaporContextMenu1 = new ContextMenuStrip();
             this.viewProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.removeFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,10 +89,6 @@
             // 
             this.btnDeny.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeny.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
-            this.btnDeny.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnDeny.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeny.ForeColor = System.Drawing.Color.White;
             this.btnDeny.Location = new System.Drawing.Point(157, 3);
             this.btnDeny.Name = "btnDeny";
             this.btnDeny.Size = new System.Drawing.Size(22, 40);
@@ -104,10 +101,6 @@
             // 
             this.btnAccept.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAccept.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
-            this.btnAccept.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.ForeColor = System.Drawing.Color.White;
             this.btnAccept.Location = new System.Drawing.Point(129, 3);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(22, 40);
@@ -118,7 +111,6 @@
             // 
             // vaporContextMenu1
             // 
-            this.vaporContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
             this.vaporContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewProfileToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -133,7 +125,6 @@
             // 
             // viewProfileToolStripMenuItem
             // 
-            this.viewProfileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.viewProfileToolStripMenuItem.Name = "viewProfileToolStripMenuItem";
             this.viewProfileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewProfileToolStripMenuItem.Text = "[unknown] (View Profile)";
@@ -146,7 +137,6 @@
             // 
             // removeFriendToolStripMenuItem
             // 
-            this.removeFriendToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.removeFriendToolStripMenuItem.Name = "removeFriendToolStripMenuItem";
             this.removeFriendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeFriendToolStripMenuItem.Text = "Remove Friend...";
@@ -154,7 +144,6 @@
             // 
             // addFriendToolStripMenuItem
             // 
-            this.addFriendToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addFriendToolStripMenuItem.Name = "addFriendToolStripMenuItem";
             this.addFriendToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addFriendToolStripMenuItem.Text = "Add Friend...";
@@ -167,7 +156,6 @@
             // 
             // refreshToolStripMenuItem
             // 
-            this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
@@ -177,7 +165,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ContextMenuStrip = this.vaporContextMenu1;
             this.Controls.Add(this.btnDeny);
@@ -201,9 +188,9 @@
         private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label statusLbl;
         private System.Windows.Forms.Label gameLbl;
-        private VaporButton btnAccept;
-        private VaporButton btnDeny;
-        private VaporContextMenu vaporContextMenu1;
+        private Button btnAccept;
+        private Button btnDeny;
+        private ContextMenuStrip vaporContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem removeFriendToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem addFriendToolStripMenuItem;

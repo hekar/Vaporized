@@ -159,8 +159,6 @@ namespace Vapor
             if ( this.highlighted )
                 return;
 
-            this.BackColor = Color.FromArgb( 38, 38, 39 );
-
             highlighted = true;
         }
         void UnHighlight()
@@ -170,8 +168,6 @@ namespace Vapor
 
             if ( !this.highlighted )
                 return;
-
-            this.BackColor = Color.FromArgb( 58, 58, 58 );
 
             highlighted = false;
         }

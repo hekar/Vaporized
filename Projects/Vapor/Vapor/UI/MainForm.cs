@@ -438,11 +438,5 @@ namespace Vapor
         {
             UpdateContextState();
         }
-
-        private void changeNameToolStripMenuItem_Click( object sender, EventArgs e )
-        {
-            ChangeNameDialog cnd = new ChangeNameDialog();
-            cnd.ShowDialog( this );
-        }
     }
 }

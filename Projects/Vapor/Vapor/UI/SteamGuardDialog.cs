@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Vapor
 {
-    partial class SteamGuardDialog : VaporForm
+    partial class SteamGuardDialog : Form
     {
         public string AuthCode
         {

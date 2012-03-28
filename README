@@ -1,1 +1,8 @@
-Fork of Vapor from SteamRE to completely redo the user interface 
+Fork of Vapor from SteamRE with the goal to completely redo the user interface.
+
+
+Goals:
+  1. Use operating system theme for controls
+  2. Do not use Visual Studio Winform designer
+  3. Port portions of code to Boo programming language
+  4. 

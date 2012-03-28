@@ -1,4 +1,5 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+namespace Vapor
 {
     partial class MainForm
     {
@@ -37,11 +38,9 @@
             this.addFriendToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddFriend = new Vapor.VaporButton();
-            this.stateComboBox = new Vapor.VaporComboBox();
+            this.btnAddFriend = new Button();
+            this.stateComboBox = new ComboBox();
             this.selfControl = new Vapor.FriendControl();
-            this.vaporContextMenu3 = new Vapor.VaporContextMenu();
-            this.changeNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.vaporContextMenu2 = new Vapor.VaporContextMenu();
             this.showHideToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +49,6 @@
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.vaporContextMenu1.SuspendLayout();
-            this.vaporContextMenu3.SuspendLayout();
             this.vaporContextMenu2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,7 +87,6 @@
             // 
             // vaporContextMenu1
             // 
-            this.vaporContextMenu1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
             this.vaporContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addFriendToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -100,7 +97,6 @@
             // 
             // addFriendToolStripMenuItem
             // 
-            this.addFriendToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addFriendToolStripMenuItem.Name = "addFriendToolStripMenuItem";
             this.addFriendToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.addFriendToolStripMenuItem.Text = "Add Friend...";
@@ -113,7 +109,6 @@
             // 
             // refreshToolStripMenuItem
             // 
-            this.refreshToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
@@ -121,11 +116,7 @@
             // 
             // btnAddFriend
             // 
-            this.btnAddFriend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.btnAddFriend.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddFriend.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAddFriend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddFriend.ForeColor = System.Drawing.Color.White;
             this.btnAddFriend.Location = new System.Drawing.Point(0, 0);
             this.btnAddFriend.Name = "btnAddFriend";
             this.btnAddFriend.Size = new System.Drawing.Size(208, 26);
@@ -138,10 +129,7 @@
             // 
             this.stateComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.stateComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.stateComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.stateComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stateComboBox.ForeColor = System.Drawing.Color.White;
             this.stateComboBox.FormattingEnabled = true;
             this.stateComboBox.Items.AddRange(new object[] {
             "Online",
@@ -158,32 +146,13 @@
             // selfControl
             // 
             this.selfControl.AvatarHash = null;
-            this.selfControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
             this.selfControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.selfControl.CanOpenProfile = false;
-            this.selfControl.ContextMenuStrip = this.vaporContextMenu3;
             this.selfControl.IsHighlighted = true;
             this.selfControl.Location = new System.Drawing.Point(3, 3);
             this.selfControl.Name = "selfControl";
             this.selfControl.Size = new System.Drawing.Size(204, 46);
             this.selfControl.TabIndex = 0;
-            // 
-            // vaporContextMenu3
-            // 
-            this.vaporContextMenu3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
-            this.vaporContextMenu3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeNameToolStripMenuItem});
-            this.vaporContextMenu3.Name = "vaporContextMenu3";
-            this.vaporContextMenu3.ShowImageMargin = false;
-            this.vaporContextMenu3.Size = new System.Drawing.Size(128, 48);
-            // 
-            // changeNameToolStripMenuItem
-            // 
-            this.changeNameToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.changeNameToolStripMenuItem.Name = "changeNameToolStripMenuItem";
-            this.changeNameToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.changeNameToolStripMenuItem.Text = "Change Name";
-            this.changeNameToolStripMenuItem.Click += new System.EventHandler(this.changeNameToolStripMenuItem_Click);
             // 
             // notifyIcon1
             // 
@@ -195,7 +164,6 @@
             // 
             // vaporContextMenu2
             // 
-            this.vaporContextMenu2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
             this.vaporContextMenu2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showHideToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -206,7 +174,6 @@
             // 
             // showHideToolStripMenuItem
             // 
-            this.showHideToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.showHideToolStripMenuItem.Name = "showHideToolStripMenuItem";
             this.showHideToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.showHideToolStripMenuItem.Text = "[Show/Hide]";
@@ -219,7 +186,6 @@
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "Exit";
@@ -229,7 +195,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(38)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(210, 470);
             this.Controls.Add(this.friendsFlow);
             this.Controls.Add(this.panel3);
@@ -244,7 +209,6 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.vaporContextMenu1.ResumeLayout(false);
-            this.vaporContextMenu3.ResumeLayout(false);
             this.vaporContextMenu2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -256,7 +220,7 @@
         private FriendControl selfControl;
         private FriendsListControl friendsFlow;
         private System.Windows.Forms.Panel panel3;
-        private VaporButton btnAddFriend;
+        private Button btnAddFriend;
         private VaporContextMenu vaporContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem addFriendToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
@@ -266,8 +230,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem showHideToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private VaporComboBox stateComboBox;
-        private VaporContextMenu vaporContextMenu3;
-        private System.Windows.Forms.ToolStripMenuItem changeNameToolStripMenuItem;
+        private ComboBox stateComboBox;
     }
 }

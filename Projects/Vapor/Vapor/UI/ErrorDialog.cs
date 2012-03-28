@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Vapor
 {
-    partial class ErrorDialog : VaporForm
+    partial class ErrorDialog : Form
     {
         public ErrorDialog( Exception ex )
         {

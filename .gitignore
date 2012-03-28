@@ -2,7 +2,8 @@
 [Bb]in/
 [Oo]bj/
 
-*.ico
+*.suo
+*~
 
 # mstest test results
 TestResults

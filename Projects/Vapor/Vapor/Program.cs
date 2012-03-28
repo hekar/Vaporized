@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using SteamKit2;
+using Vapor.State;
 
 
 namespace Vapor
@@ -26,18 +27,18 @@ namespace Vapor
 
             try
             {
-                Start( args );
+                var settings = new ReadSettings().Read();
+                Start( settings, args );
             }
             catch ( Exception ex )
             {
-                //new ErrorDialog( ex ).ShowDialog();
-				Console.WriteLine(ex.StackTrace);
+                new ErrorDialog( ex ).ShowDialog();
             }
         }
 
-        static void Start( string[] args )
+        static void Start( Settings settings, string[] args )
         {
-            LoginDialog ld = new LoginDialog( FindArg( args, "-udp" ) );
+            LoginDialog ld = new LoginDialog( settings, FindArg( args, "-udp" ) );
 
             if ( ld.ShowDialog() != DialogResult.OK )
                 return;
@@ -63,7 +64,7 @@ namespace Vapor
             {
                 try
                 {
-                    Start( args );
+                    Start( settings, args );
                 }
                 catch ( Exception ex )
                 {

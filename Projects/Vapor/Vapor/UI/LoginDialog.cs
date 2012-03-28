@@ -8,18 +8,22 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using SteamKit2;
+using Vapor.State;
 
 namespace Vapor
 {
     partial class LoginDialog : Form
     {
-        bool useUdp;
+        private bool useUdp;
+        private Settings settings;
 
-        public LoginDialog( bool useUdp )
+        public LoginDialog( Settings settings, bool useUdp )
         {
+            this.settings = settings;
             InitializeComponent();
 
             this.useUdp = useUdp;
+            txtUser.Text = settings["username"];
 			ActiveControl = txtUser;
         }
 
@@ -42,6 +46,10 @@ namespace Vapor
                 this.Enabled = true;
                 return;
             }
+
+            settings["username"] = Steam3.UserName;
+            var save = new SaveSettings();
+            save.Save(settings);
 
             DialogResult = DialogResult.OK;
         }

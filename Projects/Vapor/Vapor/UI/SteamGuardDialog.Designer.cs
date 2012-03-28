@@ -1,4 +1,5 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+namespace Vapor
 {
     partial class SteamGuardDialog
     {
@@ -29,11 +30,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( SteamGuardDialog ) );
-            this.btnOk = new Vapor.VaporButton();
-            this.txtAuthCode = new Vapor.VaporTextBox();
-            this.vaporLabel1 = new Vapor.VaporLabel();
-            this.vaporLabel2 = new Vapor.VaporLabel();
-            this.btnCancel = new Vapor.VaporButton();
+            this.btnOk = new Button();
+            this.txtAuthCode = new TextBox();
+            this.vaporLabel1 = new Label();
+            this.vaporLabel2 = new Label();
+            this.btnCancel = new Button();
             this.SuspendLayout();
             // 
             // btnOk
@@ -106,11 +107,11 @@
 
         #endregion
 
-        private VaporButton btnOk;
-        private VaporTextBox txtAuthCode;
-        private VaporLabel vaporLabel1;
-        private VaporLabel vaporLabel2;
-        private VaporButton btnCancel;
+        private Button btnOk;
+        private TextBox txtAuthCode;
+        private Label vaporLabel1;
+        private Label vaporLabel2;
+        private Button btnCancel;
 
     }
 }
