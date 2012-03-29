@@ -25,7 +25,7 @@ namespace Vapor
                 InitializeComponent();
 
                 this.useUdp = settings.Main.steam3_useUdp;
-                txtUser.Text = settings["username"];
+                txtUser.Text = settings.Main.username;
                 ActiveControl = txtUser;
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Vapor
                 return;
             }
 
-            settings["username"] = Steam3.UserName;
+            settings.Main.username = Steam3.UserName;
             var save = new SaveSettings();
             save.Save(settings);
 

@@ -32,26 +32,5 @@ namespace Vapor.State
             settings = Properties.Settings.Default;
             colorSettings = Properties.Color.Default;
         }
-        
-
-        public string this[string index]
-        {
-            get
-            {
-                return settings.Properties[index].ToString();
-            }
-
-            set
-            {
-                PropertyInfo[] props = settings.GetType().GetProperties();
-                foreach (PropertyInfo prop in props)
-                {
-                    if (prop.Name == index)
-                    {
-                        prop.SetValue(settings, value, null);
-                    }
-                }
-            }
-        }
     }
 }
