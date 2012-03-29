@@ -5,14 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Vapor.Properties;
 using SteamKit2;
+using Vapor.State;
 
 namespace Vapor
 {
     partial class MainForm : Form, ICallbackHandler
     {
         public bool Relog { get; private set; }
+
+        Settings settings;
 
         bool shouldClose;
 
@@ -22,9 +24,10 @@ namespace Vapor
         DateTime nextSort;
         Timer sortTimer;
 
-        public MainForm()
+        public MainForm(Settings settings)
         {
-            InitializeComponent();
+            this.settings = settings;
+            InitializeComponent(settings);
             this.Enabled = false; // input is disabled until we login to steam3
 
             Steam3.AddHandler( this );
@@ -242,7 +245,7 @@ namespace Vapor
 
                 if ( friendControl == null )
                 {
-                    friendControl = new FriendControl( friend );
+                    friendControl = new FriendControl(settings, friend);
                     friendsFlow.Controls.Add( friendControl );
                 }
                 else

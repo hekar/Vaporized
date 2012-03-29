@@ -4,17 +4,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
 using SteamKit2;
 using System.Diagnostics;
+using Vapor.State;
 
 namespace Vapor
 {
-    partial class ChatDialog : VaporForm
+    partial class ChatDialog : Form
     {
-        public ChatDialog( SteamID steamId )
+        private Settings settings;
+        public ChatDialog(Settings settings, SteamID steamId)
         {
+            this.settings = settings;
             InitializeComponent();
 
             chatFriend.UpdateFriend( new Friend( steamId ) );
@@ -29,7 +33,16 @@ namespace Vapor
 
             this.chatFriend.IsHighlighted = false;
 			
+            setupFonts();
+            
 			this.txtChat.Select();
+        }
+        
+        private	void setupFonts()
+        {
+            var font = settings.Main.ChatFont;
+		    this.txtChat.Font = font;
+		    this.txtLog.Font = font;
         }
 
         public new void Show()
@@ -51,14 +64,15 @@ namespace Vapor
             string time = DateTime.Now.ToString( "h:mm tt" );
 
             var friend = new Friend( sender );
-            var statusColor = Util.GetStatusColor( friend );
+            var status = new StatusColor(settings);
+            var statusColor = status.GetStatusColor(friend);
 
             switch ( type )
             {
                 case EChatEntryType.ChatMsg:
 
                     this.AppendText( statusColor, string.Format( "{0} - {1}", time, friendName ) );
-                    this.AppendText( Color.White, ": " + msg );
+                    this.AppendText( Color.Black, ": " + msg );
 
                     if ( sender != Steam3.SteamClient.SteamID )
                         FlashWindow();
@@ -95,13 +109,21 @@ namespace Vapor
 
         private void FlashWindow()
         {
-            if ( this.Focused || txtChat.Focused )
-            {
-                // don't flash if we already have focus, because that would be silly!
-                return;
-            }
-
-            Util.FlashWindow( this, true );
+        	try 
+        	{
+                bool flashWindow = settings.Main.ChatFlashWindow;
+	            if ( !flashWindow || this.Focused || txtChat.Focused )
+	            {
+	                // don't flash if we already have focus, because that would be silly!
+	                return;
+	            }
+	
+	            Util.FlashWindow( this, true );
+        	} 
+        	catch (Exception ex)
+        	{
+        		new ErrorDialog(ex).ShowDialog();
+        	}
         }
         public void HandleChat( SteamFriends.FriendMsgCallback friendMsg )
         {

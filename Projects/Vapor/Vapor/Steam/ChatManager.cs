@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using SteamKit2;
+using Vapor.State;
 
 namespace Vapor
 {
     class ChatManager : ICallbackHandler
     {
         Dictionary<SteamID, ChatDialog> chatMap;
+        private Settings settings;
 
-        public ChatManager()
+        public ChatManager(Settings settings)
         {
+            this.settings = settings;
             chatMap = new Dictionary<SteamID, ChatDialog>();
 
             Steam3.AddHandler( this );
@@ -23,7 +26,7 @@ namespace Vapor
                 return chatMap[ steamId ];
 
 
-            ChatDialog cd = new ChatDialog( steamId );
+            ChatDialog cd = new ChatDialog( settings, steamId );
             chatMap[ steamId ] = cd;
 
             cd.Show();

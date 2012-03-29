@@ -36,16 +36,19 @@ namespace Vapor
             }
         }
 
-        static void Start( Settings settings, string[] args )
+        static void Start(Settings settings, string[] args)
         {
-            LoginDialog ld = new LoginDialog( settings, FindArg( args, "-udp" ) );
+            bool useUdp = FindArg(args, "-udp");
+            settings.Main.steam3_useUdp = useUdp;
+
+            LoginDialog ld = new LoginDialog( settings );
 
             if ( ld.ShowDialog() != DialogResult.OK )
                 return;
 
             CDNCache.Initialize();
 
-            MainForm mf = new MainForm();
+            MainForm mf = new MainForm(settings);
             mf.Show();
 
             while ( mf.Created )

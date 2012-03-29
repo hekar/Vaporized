@@ -17,14 +17,21 @@ namespace Vapor
         private bool useUdp;
         private Settings settings;
 
-        public LoginDialog( Settings settings, bool useUdp )
+        public LoginDialog(Settings settings)
         {
-            this.settings = settings;
-            InitializeComponent();
+            try
+            {
+                this.settings = settings;
+                InitializeComponent();
 
-            this.useUdp = useUdp;
-            txtUser.Text = settings["username"];
-			ActiveControl = txtUser;
+                this.useUdp = settings.Main.steam3_useUdp;
+                txtUser.Text = settings["username"];
+                ActiveControl = txtUser;
+            }
+            catch (Exception ex)
+            {
+                new ErrorDialog(ex).ShowDialog();
+            }
         }
 
         private void btnLogin_Click( object sender, EventArgs e )
@@ -36,7 +43,7 @@ namespace Vapor
                 Steam3.UserName = txtUser.Text;
                 Steam3.Password = txtPass.Text;
 
-                Steam3.Initialize( useUdp );
+                Steam3.Initialize( settings );
 
                 Steam3.Connect();
             }
@@ -52,6 +59,11 @@ namespace Vapor
             save.Save(settings);
 
             DialogResult = DialogResult.OK;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

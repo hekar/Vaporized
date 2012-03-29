@@ -5,6 +5,7 @@ using System.Text;
 using SteamKit2;
 using System.Net;
 using System.Net.Sockets;
+using Vapor.State;
 
 namespace Vapor
 {
@@ -53,14 +54,15 @@ namespace Vapor
         }
 
 
-        public static void Initialize( bool useUdp )
+        public static void Initialize(Settings settings)
         {
+            bool useUdp = Boolean.Parse(settings["steam3_useUdp"]);
             SteamClient = new SteamClient( useUdp ? ProtocolType.Udp : ProtocolType.Tcp );
 
             SteamFriends = SteamClient.GetHandler<SteamFriends>();
             SteamUser = SteamClient.GetHandler<SteamUser>();
 
-            ChatManager = new ChatManager();
+            ChatManager = new ChatManager(settings);
         }
 
         public static void Connect()

@@ -1,4 +1,5 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+namespace Vapor
 {
     partial class ErrorDialog
     {
@@ -29,8 +30,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorDialog));
-            this.txtException = new Vapor.VaporTextBox();
-            this.btnOk = new Vapor.VaporButton();
+            this.txtException = new TextBox();
+            this.btnOk = new Button();
             this.SuspendLayout();
             // 
             // txtException
@@ -74,7 +75,7 @@
 
         #endregion
 
-        private VaporTextBox txtException;
-        private VaporButton btnOk;
+        private TextBox txtException;
+        private Button btnOk;
     }
 }

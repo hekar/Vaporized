@@ -1,4 +1,5 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+namespace Vapor
 {
     partial class AddFriendDialog
     {
@@ -29,17 +30,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFriendDialog));
-            this.txtFriend = new Vapor.VaporTextBox();
-            this.vaporLabel1 = new Vapor.VaporLabel();
-            this.btnOK = new Vapor.VaporButton();
-            this.btnCancel = new Vapor.VaporButton();
+            this.txtFriend = new TextBox();
+            this.vaporLabel1 = new Label();
+            this.btnOK = new Button();
+            this.btnCancel = new Button();
             this.SuspendLayout();
             // 
             // txtFriend
             // 
-            this.txtFriend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.txtFriend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFriend.ForeColor = System.Drawing.Color.White;
             this.txtFriend.Location = new System.Drawing.Point(12, 43);
             this.txtFriend.Name = "txtFriend";
             this.txtFriend.Size = new System.Drawing.Size(303, 20);
@@ -47,7 +46,6 @@
             // 
             // vaporLabel1
             // 
-            this.vaporLabel1.ForeColor = System.Drawing.Color.White;
             this.vaporLabel1.Location = new System.Drawing.Point(12, 9);
             this.vaporLabel1.Name = "vaporLabel1";
             this.vaporLabel1.Size = new System.Drawing.Size(303, 31);
@@ -57,30 +55,20 @@
             // 
             // btnOK
             // 
-            this.btnOK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.ForeColor = System.Drawing.Color.White;
             this.btnOK.Location = new System.Drawing.Point(240, 69);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 2;
             this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(12, 69);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // AddFriendDialog
@@ -106,9 +94,9 @@
 
         #endregion
 
-        private VaporTextBox txtFriend;
-        private VaporLabel vaporLabel1;
-        private VaporButton btnOK;
-        private VaporButton btnCancel;
+        private TextBox txtFriend;
+        private Label vaporLabel1;
+        private Button btnOK;
+        private Button btnCancel;
     }
 }

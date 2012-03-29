@@ -58,5 +58,41 @@ namespace Vapor.Properties {
                 this["auth"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool steam3_useUdp {
+            get {
+                return ((bool)(this["steam3_useUdp"]));
+            }
+            set {
+                this["steam3_useUdp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Arial, 16pt")]
+        public global::System.Drawing.Font ChatFont {
+            get {
+                return ((global::System.Drawing.Font)(this["ChatFont"]));
+            }
+            set {
+                this["ChatFont"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ChatFlashWindow {
+            get {
+                return ((bool)(this["ChatFlashWindow"]));
+            }
+            set {
+                this["ChatFlashWindow"] = value;
+            }
+        }
     }
 }

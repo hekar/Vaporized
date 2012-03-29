@@ -12,6 +12,7 @@ namespace Vapor
         public Friend()
         {
         }
+
         public Friend( ulong steamid )
         {
             this.SteamID = steamid;

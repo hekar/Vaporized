@@ -1,4 +1,6 @@
-﻿namespace Vapor
+﻿using System.Windows.Forms;
+using System;
+namespace Vapor
 {
     partial class ChatDialog
     {
@@ -30,9 +32,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager( typeof( ChatDialog ) );
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chatFriend = new Vapor.FriendControl();
+            this.chatFriend = new Vapor.FriendControl(settings);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.txtLog = new Vapor.VaporRichTextBox();
+            this.txtLog = new RichTextBox();
             this.txtChat = new Vapor.ChatTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -101,7 +103,7 @@
             this.txtChat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtChat.Location = new System.Drawing.Point( 0, 0 );
             this.txtChat.Name = "txtChat";
-            this.txtChat.Size = new System.Drawing.Size( 284, 60 );
+            this.txtChat.Size = new System.Drawing.Size( 284, 30 );
             this.txtChat.TabIndex = 0;
             this.txtChat.Text = "";
             this.txtChat.EnterPressed += new System.EventHandler( this.txtChat_EnterPressed );
@@ -143,7 +145,7 @@
         private FriendControl chatFriend;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private ChatTextBox txtChat;
-        private VaporRichTextBox txtLog;
+        private RichTextBox txtLog;
         private System.Windows.Forms.Panel panel2;
     }
 }

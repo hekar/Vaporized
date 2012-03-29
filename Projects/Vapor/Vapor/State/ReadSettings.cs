@@ -12,29 +12,8 @@ namespace Vapor.State
         public Settings Read()
         {
             Settings settings = new Settings();
-
-            Properties.Settings.Default.Reload();
-
-            Properties.Settings progSettings = Properties.Settings.Default;
-            PropertyInfo[] props = progSettings.GetType().GetProperties();
-            foreach (PropertyInfo prop in props)
-            {
-                string[] ignore = new string[] {
-                    "Context",
-                    "Properties",
-                    "PropertyValues",
-                    "Item",
-                    "SettingsKey",
-                    "IsSynchronized",
-                    "Default",
-                    "Providers"
-                };
-
-                if (!ignore.Contains(prop.Name))
-                {
-                    settings[prop.Name] = prop.GetValue(progSettings, null).ToString();
-                }
-            }
+            settings.Main.Reload();
+            settings.Color.Reload();
 
             return settings;
         }

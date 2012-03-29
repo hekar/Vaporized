@@ -7,9 +7,10 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Drawing.Imaging;
-using Vapor.Properties;
+using Vapor.State;
 using System.Linq;
 using SteamKit2;
+using Vapor.Properties;
 
 namespace Vapor
 {
@@ -20,12 +21,14 @@ namespace Vapor
         public byte[] AvatarHash { get; set; } // checking if update is necessary
         public bool IsHighlighted { get; set; }
         public bool CanOpenProfile { get; set; }
+        private State.Settings settings;
 
         bool highlighted;
 
 
-        public FriendControl()
+        public FriendControl(Vapor.State.Settings settings)
         {
+            this.settings = settings;
             InitializeComponent();
 
             btnAccept.Visible = false;
@@ -47,15 +50,15 @@ namespace Vapor
             }
         }
 
+        public FriendControl(Vapor.State.Settings settings, Friend steamid)
+            : this(settings)
+        {
+            UpdateFriend(steamid);
+        }
+
         ~FriendControl()
         {
             Steam3.RemoveHandler( this );
-        }
-
-        public FriendControl( Friend steamid )
-            : this()
-        {
-            UpdateFriend( steamid );
         }
 
         public void DisableContextMenu()
@@ -129,7 +132,10 @@ namespace Vapor
                 btnDeny.Visible = false;
             }
 
-            nameLbl.ForeColor = statusLbl.ForeColor = gameLbl.ForeColor = Util.GetStatusColor( steamid );
+            var status = new StatusColor(settings);
+            var statusColor = status.GetStatusColor(steamid);
+
+            nameLbl.ForeColor = statusLbl.ForeColor = gameLbl.ForeColor = statusColor;
 
             byte[] avatarHash = Steam3.SteamFriends.GetFriendAvatar( steamid.SteamID );
             bool validHash = avatarHash != null && !Util.IsZeros( avatarHash );

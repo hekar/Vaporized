@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Vapor.Properties" GeneratedClassName="Color">
+  <Profiles />
+  <Settings>
+    <Setting Name="StatusIngameFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">177, 251, 80</Value>
+    </Setting>
+    <Setting Name="StatusIngameBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatusOnlineFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">111, 189, 255</Value>
+    </Setting>
+    <Setting Name="StatusOnlineBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatusOfflineFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">137, 137, 137</Value>
+    </Setting>
+    <Setting Name="StatusOfflineBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatusBlockedFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">251, 80, 80</Value>
+    </Setting>
+    <Setting Name="StatusBlockedBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatusInvitedFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">250, 218, 94</Value>
+    </Setting>
+    <Setting Name="StatusInvitedBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FriendsFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FriendsBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FriendsHigh" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="StatusRequestingFore" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">135, 169, 107</Value>
+    </Setting>
+    <Setting Name="StatusRequestingBack" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

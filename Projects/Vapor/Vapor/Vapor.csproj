@@ -67,15 +67,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Color.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="State\ColorSettings.cs" />
+    <Compile Include="Steam\StatusColor.cs" />
     <Compile Include="State\ReadSettings.cs" />
     <Compile Include="State\SaveSettings.cs" />
     <Compile Include="State\Settings.cs" />
+    <Compile Include="Properties\Color.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Color.settings</DependentUpon>
+    </Compile>
     <Compile Include="UI\ErrorDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,15 +94,6 @@
     </Compile>
     <Compile Include="UI\AddFriendDialog.Designer.cs">
       <DependentUpon>AddFriendDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\Base\VaporCheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporContextMenu.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI\SteamGuardDialog.cs">
       <SubType>Form</SubType>
@@ -121,9 +118,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Steam\CDNCache.cs" />
-    <Compile Include="UI\Base\VaporRichTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="UI\LoginDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,21 +149,6 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
-    <Compile Include="UI\Base\VaporForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporGroupBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\Base\VaporLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +207,10 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Properties\Color.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Color.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

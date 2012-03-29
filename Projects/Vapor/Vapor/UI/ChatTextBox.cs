@@ -12,8 +12,6 @@ namespace Vapor
     {
         public ChatTextBox()
         {
-            this.BackColor = Color.FromArgb( 38, 38, 39 );
-            this.ForeColor = Color.White;
             this.BorderStyle = BorderStyle.None;
         }
 

@@ -29,123 +29,129 @@ namespace Vapor
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginDialog));
-            this.btnLogin = new Button();
-            this.vaporGroupBox1 = new GroupBox();
-            this.vaporLabel2 = new Label();
-            this.txtPass = new TextBox();
-            this.vaporLabel1 = new Label();
-            this.txtUser = new TextBox();
-            this.btnCancel = new Button();
-            this.vaporGroupBox1.SuspendLayout();
+            this.btnLogin = new System.Windows.Forms.Button();
+            this.vaporLabel2 = new System.Windows.Forms.Label();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.vaporLabel1 = new System.Windows.Forms.Label();
+            this.txtUser = new System.Windows.Forms.TextBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnLogin
             // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogin.Location = new System.Drawing.Point(260, 94);
+            this.btnLogin.Location = new System.Drawing.Point(218, 61);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(81, 69);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // vaporGroupBox1
-            // 
-            this.vaporGroupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vaporGroupBox1.Controls.Add(this.vaporLabel2);
-            this.vaporGroupBox1.Controls.Add(this.txtPass);
-            this.vaporGroupBox1.Controls.Add(this.vaporLabel1);
-            this.vaporGroupBox1.Controls.Add(this.txtUser);
-            this.vaporGroupBox1.Location = new System.Drawing.Point(12, 12);
-            this.vaporGroupBox1.Name = "vaporGroupBox1";
-            this.vaporGroupBox1.Size = new System.Drawing.Size(323, 76);
-            this.vaporGroupBox1.TabIndex = 1;
-            this.vaporGroupBox1.TabStop = false;
-            this.vaporGroupBox1.Text = "Login";
-            // 
             // vaporLabel2
             // 
             this.vaporLabel2.AutoSize = true;
-            this.vaporLabel2.Location = new System.Drawing.Point(8, 47);
+            this.vaporLabel2.Location = new System.Drawing.Point(10, 87);
+            this.vaporLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vaporLabel2.Name = "vaporLabel2";
-            this.vaporLabel2.Size = new System.Drawing.Size(56, 13);
-            this.vaporLabel2.TabIndex = 3;
+            this.vaporLabel2.Size = new System.Drawing.Size(73, 17);
+            this.vaporLabel2.TabIndex = 7;
             this.vaporLabel2.Text = "Password:";
             // 
             // txtPass
             // 
-            this.txtPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPass.Location = new System.Drawing.Point(70, 45);
+            this.txtPass.Location = new System.Drawing.Point(13, 108);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
-            this.txtPass.Size = new System.Drawing.Size(247, 20);
-            this.txtPass.TabIndex = 2;
+            this.txtPass.Size = new System.Drawing.Size(197, 22);
+            this.txtPass.TabIndex = 6;
             // 
             // vaporLabel1
             // 
             this.vaporLabel1.AutoSize = true;
-            this.vaporLabel1.Location = new System.Drawing.Point(6, 21);
+            this.vaporLabel1.Location = new System.Drawing.Point(10, 40);
+            this.vaporLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.vaporLabel1.Name = "vaporLabel1";
-            this.vaporLabel1.Size = new System.Drawing.Size(58, 13);
-            this.vaporLabel1.TabIndex = 1;
+            this.vaporLabel1.Size = new System.Drawing.Size(77, 17);
+            this.vaporLabel1.TabIndex = 5;
             this.vaporLabel1.Text = "Username:";
             // 
             // txtUser
             // 
-            this.txtUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUser.Location = new System.Drawing.Point(70, 19);
+            this.txtUser.Location = new System.Drawing.Point(13, 61);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(247, 20);
-            this.txtUser.TabIndex = 0;
+            this.txtUser.Size = new System.Drawing.Size(197, 22);
+            this.txtUser.TabIndex = 4;
             // 
-            // btnCancel
+            // menuStrip
             // 
-            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(12, 94);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.menuStrip.Size = new System.Drawing.Size(315, 26);
+            this.menuStrip.TabIndex = 8;
+            this.menuStrip.Text = "menuStrip";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(40, 22);
+            this.fileToolStripMenuItem.Text = "&File";
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "E&xit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // LoginDialog
             // 
             this.AcceptButton = this.btnLogin;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(347, 129);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.vaporGroupBox1);
+            this.ClientSize = new System.Drawing.Size(315, 155);
+            this.Controls.Add(this.vaporLabel2);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.vaporLabel1);
+            this.Controls.Add(this.txtUser);
             this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.menuStrip);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            //
+            this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginDialog";
             this.Text = "Vapor - Login";
-            this.vaporGroupBox1.ResumeLayout(false);
-            this.vaporGroupBox1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private Button btnLogin;
-        private GroupBox vaporGroupBox1;
-        private TextBox txtUser;
-        private Label vaporLabel1;
-        private TextBox txtPass;
         private Label vaporLabel2;
-        private Button btnCancel;
+        private TextBox txtPass;
+        private Label vaporLabel1;
+        private TextBox txtUser;
+        private MenuStrip menuStrip;
+        private ToolStripMenuItem fileToolStripMenuItem;
+        private ToolStripMenuItem exitToolStripMenuItem;
 
     }
 }

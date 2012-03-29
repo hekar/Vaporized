@@ -10,7 +10,7 @@ using SteamKit2;
 
 namespace Vapor
 {
-    partial class AddFriendDialog : VaporForm
+    partial class AddFriendDialog : Form
     {
         public AddFriendDialog()
         {
