@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Threading;
+using Gtk;
 using SteamKit2;
 using Vapor.State;
+using System.Threading;
 
 
 namespace Vapor
@@ -15,16 +12,6 @@ namespace Vapor
     {
         public static void Main( string[] args )
         {
-            if ( FindArg( args, "-debug" ) )
-            {
-                DebugLog.AddListener( new ConsoleDebugListener() );
-
-                TraceDialog td = new TraceDialog();
-                td.Show();
-
-                FileTrace ft = new FileTrace();
-            }
-
             try
             {
                 var settings = new ReadSettings().Read();
@@ -36,25 +23,22 @@ namespace Vapor
             }
         }
 
-        static void Start(Settings settings, string[] args)
+        static void Start(Vapor.State.Settings settings, string[] args)
         {
+			Application.Init();
+			
             bool useUdp = FindArg(args, "-udp");
             settings.Main.steam3_useUdp = useUdp;
 
-            LoginDialog ld = new LoginDialog( settings );
-
-            if ( ld.ShowDialog() != DialogResult.OK )
-                return;
+			var login = new Login(settings);
+			login.ShowAll();
 
             CDNCache.Initialize();
 
-            MainForm mf = new MainForm(settings);
-            mf.Show();
-
-            while ( mf.Created )
+            while ( login.Visible )
             {
-                Steam3.Update();
-                Application.DoEvents();
+                //Steam3.Update();
+				Application.RunIteration();
 
                 Thread.Sleep( 1 ); // sue me, AzuiSleet.
             }
@@ -62,18 +46,6 @@ namespace Vapor
             Steam3.Shutdown();
 
             CDNCache.Shutdown();
-
-            if ( mf.Relog )
-            {
-                try
-                {
-                    Start( settings, args );
-                }
-                catch ( Exception ex )
-                {
-                    new ErrorDialog( ex ).ShowDialog();
-                }
-            }
         }
 
         static bool FindArg( string[] args, string arg )

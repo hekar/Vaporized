@@ -9,12 +9,12 @@ namespace Vapor
 {
     class ChatManager : ICallbackHandler
     {
-        Dictionary<SteamID, ChatDialog> chatMap;
-        private Settings settings;
+        private Dictionary<SteamID, ChatDialog> chatMap;
+		private Settings settings;
 
         public ChatManager(Settings settings)
         {
-            this.settings = settings;
+			this.settings = settings;
             chatMap = new Dictionary<SteamID, ChatDialog>();
 
             Steam3.AddHandler( this );

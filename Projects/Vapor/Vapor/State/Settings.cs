@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Vapor.State
 {
-    class Settings
+    public class Settings
     {
         private Properties.Settings settings;
         private Properties.Color colorSettings;

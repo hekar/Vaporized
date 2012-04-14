@@ -1,10 +1,39 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Vapor/UI/MainForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Vapor/Gtk/Dialog/Friends.cs">
     <Files>
-      <File FileName="Vapor/app.config" Line="4" Column="1" />
-      <File FileName="Vapor/UI/MainForm.cs" Line="24" Column="3" />
+      <File FileName="Vapor/Program.cs" Line="34" Column="17" />
+      <File FileName="Vapor/Gtk/Dialog/Login.cs" Line="64" Column="19" />
+      <File FileName="Vapor/Gtk/Dialog/Friends.cs" Line="90" Column="4" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="SteamKit2" expanded="True">
+            <Node name="Base" expanded="True">
+              <Node name="Generated" expanded="True" />
+            </Node>
+          </Node>
+          <Node name="Vapor" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Gtk" expanded="True">
+              <Node name="Dialog" expanded="True">
+                <Node name="Friends.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Steam" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True">
+          <Node name="Vapor" expanded="True">
+            <Node name="Stetic" expanded="True" />
+            <Node name="Vapor" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

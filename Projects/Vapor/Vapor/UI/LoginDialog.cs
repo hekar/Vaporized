@@ -43,7 +43,7 @@ namespace Vapor
                 Steam3.UserName = txtUser.Text;
                 Steam3.Password = txtPass.Text;
 
-                Steam3.Initialize( settings );
+                Steam3.Initialize(settings);
 
                 Steam3.Connect();
             }

@@ -56,7 +56,7 @@ namespace Vapor
 
         public static void Initialize(Settings settings)
         {
-            bool useUdp = settings.Main.steam3_useUdp;
+			Boolean useUdp = settings.Main.steam3_useUdp;
             SteamClient = new SteamClient( useUdp ? ProtocolType.Udp : ProtocolType.Tcp );
 
             SteamFriends = SteamClient.GetHandler<SteamFriends>();

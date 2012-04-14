@@ -12,8 +12,8 @@ namespace Vapor.State
         public Settings Read()
         {
             Settings settings = new Settings();
-            settings.Main.Reload();
-            settings.Color.Reload();
+            //settings.Main.Reload();
+            //settings.Color.Reload();
 
             return settings;
         }

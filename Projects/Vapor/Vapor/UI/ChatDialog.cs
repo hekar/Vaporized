@@ -15,10 +15,9 @@ namespace Vapor
 {
     partial class ChatDialog : Form
     {
-        private Settings settings;
+		private Settings settings;
         public ChatDialog(Settings settings, SteamID steamId)
         {
-            this.settings = settings;
             InitializeComponent();
 
             chatFriend.UpdateFriend( new Friend( steamId ) );
